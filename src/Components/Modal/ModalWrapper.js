@@ -2,8 +2,8 @@ import React from 'react';
 
 import ModalView from './ModalView';
 
-const ModalWrapper = () => {
-  return <ModalView />;
+const ModalWrapper = ({ handleModal }) => {
+  return <ModalView handleModal={handleModal} />;
 };
 
 export default ModalWrapper;

@@ -4,7 +4,7 @@ import { classNames } from './../../constants/classNames';
 import { translations } from './../../constants/tranlations';
 import './modal.scss';
 
-const ModalView = () => {
+const ModalView = ({ handleModal }) => {
   const {
     modal,
     modalContainer,
@@ -35,7 +35,7 @@ const ModalView = () => {
       <div className={modalContainer}>
         <div className={top}>
           <div className={modalTitle}>{addEmployee}</div>
-          <div className={close} onClick={() => console.log('algo')}>
+          <div className={close} onClick={() => handleModal()}>
             {x}
           </div>
         </div>
@@ -52,7 +52,7 @@ const ModalView = () => {
             <input
               type={button}
               className={cancel}
-              onclick=''
+              onclick={() => handleModal()}
               value={cancelType}
             />
             <input type={submit} className={add} value={addText} />
