@@ -8,6 +8,7 @@ const ModalWrapper = ({ handleModal }) => {
   const [email, setEmail] = useState('');
   const [address, setAddress] = useState('');
   const [phone, setPhone] = useState('');
+
   const newUser = {
     name: name,
     email: email,
