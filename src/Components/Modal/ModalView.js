@@ -52,7 +52,7 @@ const ModalView = ({ handleModal }) => {
             <input
               type={button}
               className={cancel}
-              onclick={() => handleModal()}
+              onClick={() => handleModal()}
               value={cancelType}
             />
             <input type={submit} className={add} value={addText} />
