@@ -1,0 +1,7 @@
+import { getData } from './api';
+import { caller } from './caller';
+
+export const postLogin = async () => {
+  const response = await caller(getData());
+  return response;
+};
