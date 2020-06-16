@@ -1,0 +1,17 @@
+@import './../../resources/mixin.scss';
+
+.filter {
+  width: 100%;
+  height: 67px;
+  padding: 20px;
+  @include flexbox(row, flex-end, center);
+
+  input {
+    width: 317px;
+    height: 34px;
+    padding: 12px 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+}
