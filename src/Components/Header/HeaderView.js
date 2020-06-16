@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { classNames } from './../../constants/classNames';
-import { translations } from './../../constants/translations';
+import { translations } from './../../constants/tranlations';
 import './header.scss';
 
 const HeaderView = () => {

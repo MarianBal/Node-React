@@ -7,5 +7,8 @@ export const classNames = {
     title: 'title',
     button: 'button',
     materialIcons: 'material-icons'
+  },
+  filter: {
+    filter: 'filter'
   }
 };
