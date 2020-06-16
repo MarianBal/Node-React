@@ -11,6 +11,12 @@ export const classNames = {
   filter: {
     filter: 'filter'
   },
+  content: {
+    content: 'content',
+    dataTitles: 'data-titles',
+    check: 'check',
+    usersClassname: 'users'
+  },
   modal: {
     modal: 'modal',
     modalContainer: 'modal-container',
