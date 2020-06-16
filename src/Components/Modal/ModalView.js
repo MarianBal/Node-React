@@ -4,7 +4,13 @@ import { classNames } from './../../constants/classNames';
 import { translations } from './../../constants/tranlations';
 import './modal.scss';
 
-const ModalView = ({ handleModal }) => {
+const ModalView = ({
+  handleModal,
+  handleName,
+  handleEmail,
+  handleAddress,
+  handlePhone
+}) => {
   const {
     modal,
     modalContainer,
@@ -41,13 +47,17 @@ const ModalView = ({ handleModal }) => {
         </div>
         <form name={login}>
           <div className={modalSubtitles}>{name}</div>
-          <input name={name} type={typeText} placeholder='' />
+          <input name={name} type={typeText} onChange={handleName} />
           <div className={modalSubtitles}>{email}</div>
-          <input name={email} type={typeText} placeholder='' />
+          <input name={email} type={email} onChange={handleEmail} />
           <div className={modalSubtitles}>{adress}</div>
-          <textarea name={adress} type={typeText} placeholder=''></textarea>
-          <div className={modalSubtitles}>phone</div>
-          <input name={phone} type={typeText} placeholder='' />
+          <textarea
+            name={adress}
+            type={typeText}
+            onChange={handleAddress}
+          ></textarea>
+          <div className={modalSubtitles}>{phone} </div>
+          <input name={phone} type={typeText} onChange={handlePhone} />
           <div className={modalFooter}>
             <input
               type={button}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import HeaderView from './HeaderView';
-import { toggleValue } from './../../utils/toggleValue';
+import { toggleValue } from './../../utils/handleSetters';
 
 const HeaderWrapper = () => {
   const [openModal, setOpenModal] = useState(false);
