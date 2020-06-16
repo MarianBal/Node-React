@@ -1,9 +1,5 @@
 const express = require('express');
-//const cors = require('cors');
-
 const app = express();
-//app.use(cors());
-//app.use(express.json());
 
 const users = [
   {
@@ -18,7 +14,7 @@ const users = [
     name: 'ada lovelace',
     phone: '0554755558',
     email: 'contacto@gmail.com',
-    adress: 'flores'
+    adress: 'Flores'
   },
   {
     id: 3,
@@ -28,6 +24,11 @@ const users = [
     adress: 'Almagro'
   }
 ];
+
+app.all('/', function (req, res, next) {
+  console.log('Hola mundo desde un servidor con Express!');
+  next();
+});
 
 app.get('/', (req, res) => {
   console.log(users);

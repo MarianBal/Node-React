@@ -2,7 +2,7 @@ import React from 'react';
 
 import './content.scss';
 
-const ContentView = () => {
+const ContentView = ({ users }) => {
   return (
     <div className='content'>
       <div className='data-titles'>
