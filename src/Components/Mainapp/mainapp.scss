@@ -1,0 +1,10 @@
+@import './../../resources/mixin.scss';
+@import './../../resources/colors.scss';
+
+.container {
+  width: 85%;
+  height: 150px;
+  margin: 30px auto 0 auto;
+  background-color: $text-color;
+  @include flexbox(column, flex-start, center);
+}

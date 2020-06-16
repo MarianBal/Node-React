@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Mainapp from './Components/Mainapp';
-import './App.css';
+import './app.scss';
 
 const App = () => {
   return <Mainapp />;
