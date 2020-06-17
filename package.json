@@ -37,12 +37,9 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MarianBal/Node-React.git"
+    "url": "git"
   },
-  "author": "",
+  "author": "git",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/MarianBal/Node-React/issues"
-  },
-  "homepage": "https://github.com/MarianBal/Node-React#readme"
+  "homepage": "git"
 }

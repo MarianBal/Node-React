@@ -9,6 +9,16 @@ export const translations = {
     name: 'search',
     type: 'text'
   },
+  contentText: {
+    checkbox: 'checkbox',
+    actions: 'actions'
+  },
+  usersText: {
+    name: 'name',
+    email: 'email',
+    address: 'address',
+    phone: 'phone'
+  },
   modal: {
     addEmployee: 'add employee',
     x: ' x',

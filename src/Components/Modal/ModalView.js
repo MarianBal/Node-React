@@ -26,16 +26,15 @@ const ModalView = ({
     addEmployee,
     x,
     login,
-    name,
+
     typeText,
-    email,
-    adress,
-    phone,
+
     button,
     cancelType,
     submit,
     addText
   } = translations.modal;
+  const { name, email, address, phone } = translations.usersText;
   return (
     <div className={modal}>
       <div className={modalContainer}>
@@ -50,9 +49,9 @@ const ModalView = ({
           <input name={name} type={typeText} onChange={handleName} />
           <div className={modalSubtitles}>{email}</div>
           <input name={email} type={email} onChange={handleEmail} />
-          <div className={modalSubtitles}>{adress}</div>
+          <div className={modalSubtitles}>{address}</div>
           <textarea
-            name={adress}
+            name={address}
             type={typeText}
             onChange={handleAddress}
           ></textarea>
