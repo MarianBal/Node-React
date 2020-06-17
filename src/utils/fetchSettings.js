@@ -6,7 +6,6 @@ export const getSettings = () => {
 };
 
 export const postSettings = data => {
-  console.log(JSON.stringify(data));
   return {
     method: 'POST',
     body: JSON.stringify(data),

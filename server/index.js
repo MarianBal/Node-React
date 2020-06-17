@@ -1,5 +1,9 @@
 const express = require('express');
+const cors = require('cors');
+
 const app = express();
+app.use(cors());
+app.use(express.json());
 
 const users = [
   {
@@ -25,19 +29,22 @@ const users = [
   }
 ];
 
+const nextId = (e = []) => (e.length ? e[e.length - 1].id + 1 : 1);
+
 app.all('/', function (req, res, next) {
-  console.log('¡Hola mundo!');
+  console.log('¡Hello World!');
   next();
 });
 
 app.get('/', (req, res) => {
-  res.send(users);
+  res.json(users);
 });
 
 app.post('/', (req, res) => {
-  //const newUser = req.body;
-  console.log(req.body);
-  //res.send(users);
+  const newUser = req.body;
+  newUser.id = nextId(users);
+  users.push(newUser);
+  res.json(users);
 });
 
 app.listen(4000);
