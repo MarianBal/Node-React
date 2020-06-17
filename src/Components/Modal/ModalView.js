@@ -11,11 +11,7 @@ const ModalView = ({
   handleAddress,
   handlePhone,
   clearCanvas,
-  handleSubmit,
-  userName,
-  userEmail,
-  userAddress,
-  userPhone
+  handleSubmit
 }) => {
   const {
     modal,
@@ -32,9 +28,7 @@ const ModalView = ({
     addEmployee,
     x,
     login,
-
     typeText,
-
     button,
     cancelType,
     submit,

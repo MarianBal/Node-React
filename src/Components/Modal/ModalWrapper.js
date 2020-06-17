@@ -4,7 +4,6 @@ import ModalView from './ModalView';
 
 const ModalWrapper = ({
   openModal,
-  handleModal,
   handleName,
   handleEmail,
   handleAddress,
@@ -21,10 +20,6 @@ const ModalWrapper = ({
       handlePhone={handlePhone}
       clearCanvas={clearCanvas}
       handleSubmit={handleSubmit}
-      userName={''}
-      userEmail={''}
-      userAddress={''}
-      userPhone={''}
     />
   );
 };
