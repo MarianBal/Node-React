@@ -1,15 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import ContentView from './ContentView';
-import { usersData } from './helper';
 
-const ContentWrapper = () => {
-  const [users, setUsers] = useState([]);
-
-  useEffect(() => {
-    usersData(setUsers);
-  }, []);
-
+const ContentWrapper = ({ users }) => {
   return <ContentView users={users} />;
 };
 

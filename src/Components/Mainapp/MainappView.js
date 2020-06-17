@@ -6,14 +6,14 @@ import Filter from './../Filter';
 import Content from './../Content';
 import './mainapp.scss';
 
-const MainappWrapper = () => {
+const MainappView = ({ users }) => {
   return (
     <div className={classNames.mainapp.mainContainer}>
       <Header />
       <Filter />
-      <Content />
+      <Content users={users} />
     </div>
   );
 };
 
-export default MainappWrapper;
+export default MainappView;
