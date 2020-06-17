@@ -31,7 +31,7 @@ const users = [
 
 const nextId = (e = []) => (e.length ? e[e.length - 1].id + 1 : 1);
 
-app.all('/', function (req, res, next) {
+app.all('/', (req, res, next) => {
   console.log('¡Hello World!');
   next();
 });
@@ -44,6 +44,14 @@ app.post('/', (req, res) => {
   const newUser = req.body;
   newUser.id = nextId(users);
   users.push(newUser);
+  res.json(users);
+});
+
+app.delete('/:userId', (req, res) => {
+  const id = parseInt(req.params.userId);
+
+  users.filter((user, i) => user.id === id && users.splice(i, 1));
+
   res.json(users);
 });
 

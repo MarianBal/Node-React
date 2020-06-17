@@ -1,4 +1,4 @@
-import { getSettings, postSettings } from './fetchSettings';
+import { getSettings, postSettings, deleteSettings } from './fetchSettings';
 import { url } from './../constants/enums/url';
 
 export const getData = () => () => {
@@ -7,4 +7,9 @@ export const getData = () => () => {
 
 export const addUser = data => () => {
   return fetch(url, postSettings(data));
+};
+
+export const deleteUser = id => () => {
+  console.log(`${url}${id}`);
+  return fetch(`${url}${id}`, deleteSettings());
 };

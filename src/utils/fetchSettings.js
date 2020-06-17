@@ -14,3 +14,10 @@ export const postSettings = data => {
     }
   };
 };
+
+export const deleteSettings = () => {
+  return {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' }
+  };
+};

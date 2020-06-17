@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import MainappView from './MainappView';
-import { usersData, clearCanvas, addUser } from './helper';
+import { usersData, clearCanvas, addUser, deleteUser } from './helper';
 import { toggleValue } from './../../utils/handleSetters';
 import { handleEvent } from './../../utils/handleSetters';
 
@@ -44,7 +44,7 @@ const MainappWrapper = () => {
         setUsers,
         toggleValue(setOpenModal, openModal)
       )}
-      deleteUser={() => console.log('borrar')}
+      deleteUser={deleteUser(setUsers)}
     />
   );
 };

@@ -54,7 +54,7 @@ const ContentView = ({ users, deleteUser }) => {
                   <i
                     className={`${materialIcons} ${red}`}
                     title={deleteText}
-                    onClick={deleteUser}
+                    onClick={() => deleteUser(eachUser.id)}
                   >
                     &#xE872;
                   </i>
