@@ -39,7 +39,7 @@ const ContentView = ({ users }) => {
         {users.length
           ? users.map(eachUser => {
               return (
-                <div className={data}>
+                <div className={data} key={eachUser.id}>
                   <input
                     type={translations.contentText.checkbox}
                     className={check}

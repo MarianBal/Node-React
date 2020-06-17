@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import ModalView from './ModalView';
 import { handleEvent } from './../../utils/handleSetters';
-import { clearCanvas } from './helper';
+import { clearCanvas, addUser } from './helper';
 
 const ModalWrapper = ({ handleModal }) => {
   const [name, setName] = useState('');
@@ -16,7 +16,6 @@ const ModalWrapper = ({ handleModal }) => {
     adress: address,
     phone: phone
   };
-  console.log(newUser);
 
   return (
     <ModalView
@@ -32,6 +31,7 @@ const ModalWrapper = ({ handleModal }) => {
         setPhone,
         handleModal
       )}
+      addUser={addUser(newUser)}
     />
   );
 };

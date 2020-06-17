@@ -26,13 +26,18 @@ const users = [
 ];
 
 app.all('/', function (req, res, next) {
-  console.log('Hola mundo desde un servidor con Express!');
+  console.log('¡Hola mundo!');
   next();
 });
 
 app.get('/', (req, res) => {
-  console.log(users);
   res.send(users);
+});
+
+app.post('/', (req, res) => {
+  //const newUser = req.body;
+  console.log(req.body);
+  //res.send(users);
 });
 
 app.listen(4000);
