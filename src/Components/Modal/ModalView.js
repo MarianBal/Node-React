@@ -6,13 +6,16 @@ import './modal.scss';
 
 const ModalView = ({
   openModal,
-  handleModal,
   handleName,
   handleEmail,
   handleAddress,
   handlePhone,
   clearCanvas,
-  handleSubmit
+  handleSubmit,
+  userName,
+  userEmail,
+  userAddress,
+  userPhone
 }) => {
   const {
     modal,
@@ -45,23 +48,44 @@ const ModalView = ({
           <div className={modalContainer}>
             <div className={top}>
               <div className={modalTitle}>{addEmployee}</div>
-              <div className={close} onClick={() => handleModal()}>
+              <div className={close} onClick={() => clearCanvas()}>
                 {x}
               </div>
             </div>
             <form name={login} onSubmit={handleSubmit}>
               <div className={modalSubtitles}>{name}</div>
-              <input name={name} type={typeText} onChange={handleName} />
+              <input
+                name={name}
+                type={typeText}
+                onChange={handleName}
+                value={userName}
+                required={true}
+              />
               <div className={modalSubtitles}>{email}</div>
-              <input name={email} type={email} onChange={handleEmail} />
+              <input
+                name={email}
+                type={email}
+                onChange={handleEmail}
+                value={userEmail}
+                required={true}
+              />
               <div className={modalSubtitles}>{address}</div>
               <textarea
                 name={address}
                 type={typeText}
                 onChange={handleAddress}
-              ></textarea>
+                value={userAddress}
+                required={true}
+              />
+
               <div className={modalSubtitles}>{phone}</div>
-              <input name={phone} type={typeText} onChange={handlePhone} />
+              <input
+                name={phone}
+                type={typeText}
+                onChange={handlePhone}
+                value={userPhone}
+                required={true}
+              />
               <div className={modalFooter}>
                 <input
                   type={button}

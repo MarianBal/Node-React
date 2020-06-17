@@ -12,10 +12,10 @@ export const clearCanvas = (
   setterFour,
   fn
 ) => () => {
-  setterOne('');
-  setterTwo('');
-  setterThree('');
-  setterFour('');
+  setterOne(null);
+  setterTwo(null);
+  setterThree(null);
+  setterFour(null);
   fn();
 };
 
@@ -40,4 +40,10 @@ export const deleteUser = setUsers => id => {
 const deleteSingleUser = async (id, setUsers) => {
   const response = await deleteAnUser(id);
   if (response.data) setUsers(response.data);
+};
+
+export const editSingleUser = (fn, users, setSingleUser) => id => {
+  fn();
+  const singleUser = users.find(user => user.id === id);
+  setSingleUser(singleUser);
 };

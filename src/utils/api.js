@@ -10,6 +10,5 @@ export const addUser = data => () => {
 };
 
 export const deleteUser = id => () => {
-  console.log(`${url}${id}`);
   return fetch(`${url}${id}`, deleteSettings());
 };
