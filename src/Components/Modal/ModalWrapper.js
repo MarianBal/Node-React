@@ -10,8 +10,7 @@ const ModalWrapper = ({
   handleAddress,
   handlePhone,
   clearCanvas,
-  handleSubmit,
-  singleUser
+  handleSubmit
 }) => {
   return (
     <ModalView
@@ -21,11 +20,11 @@ const ModalWrapper = ({
       handleAddress={handleAddress}
       handlePhone={handlePhone}
       clearCanvas={clearCanvas}
-      handleSubmit={singleUser ? () => console.log('algo') : handleSubmit}
-      userName={singleUser ? singleUser.name : ''}
-      userEmail={singleUser ? singleUser.email : ''}
-      userAddress={singleUser ? singleUser.address : ''}
-      userPhone={singleUser ? singleUser.phone : ''}
+      handleSubmit={handleSubmit}
+      userName={''}
+      userEmail={''}
+      userAddress={''}
+      userPhone={''}
     />
   );
 };

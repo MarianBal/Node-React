@@ -18,7 +18,6 @@ const MainappWrapper = () => {
   const [email, setEmail] = useState(null);
   const [address, setAddress] = useState(null);
   const [phone, setPhone] = useState(null);
-  //const [singleUser, setSingleUser] = useState(null);
 
   const singleUser = {
     name: name,
@@ -44,7 +43,6 @@ const MainappWrapper = () => {
         setEmail,
         setAddress,
         setPhone,
-        //setSingleUser,
         toggleValue(setOpenModal, openModal)
       )}
       handleSubmit={addUser(
@@ -56,7 +54,6 @@ const MainappWrapper = () => {
       editSingleUser={editSingleUser(
         toggleValue(setOpenModal, openModal),
         users
-        //setSingleUser
       )}
       singleUser={singleUser}
     />

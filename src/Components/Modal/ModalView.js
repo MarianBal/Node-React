@@ -58,7 +58,6 @@ const ModalView = ({
                 name={name}
                 type={typeText}
                 onChange={handleName}
-                value={userName}
                 required={true}
               />
               <div className={modalSubtitles}>{email}</div>
@@ -66,7 +65,6 @@ const ModalView = ({
                 name={email}
                 type={email}
                 onChange={handleEmail}
-                value={userEmail}
                 required={true}
               />
               <div className={modalSubtitles}>{address}</div>
@@ -74,7 +72,6 @@ const ModalView = ({
                 name={address}
                 type={typeText}
                 onChange={handleAddress}
-                value={userAddress}
                 required={true}
               />
 
@@ -83,7 +80,6 @@ const ModalView = ({
                 name={phone}
                 type={typeText}
                 onChange={handlePhone}
-                value={userPhone}
                 required={true}
               />
               <div className={modalFooter}>
