@@ -5,7 +5,7 @@ import './../../constants/classNames';
 import { classNames } from './../../constants/classNames';
 import { translations } from './../../constants/tranlations';
 
-const ContentView = ({ users, deleteUser }) => {
+const ContentView = ({ users, deleteUser, handleModal }) => {
   const {
     content,
     dataTitles,
@@ -48,7 +48,11 @@ const ContentView = ({ users, deleteUser }) => {
                   <div>{eachUser.email}</div>
                   <div>{eachUser.adress}</div>
                   <div>{eachUser.phone}</div>
-                  <i className={`${materialIcons} ${yellow}`} title={edit}>
+                  <i
+                    className={`${materialIcons} ${yellow}`}
+                    title={edit}
+                    onClick={handleModal}
+                  >
                     &#xE254;
                   </i>
                   <i

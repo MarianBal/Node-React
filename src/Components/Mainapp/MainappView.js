@@ -23,7 +23,11 @@ const MainappView = ({
     <div className={classNames.mainapp.mainContainer}>
       <Header handleModal={handleModal} />
       <Filter />
-      <Content users={users} deleteUser={deleteUser} />
+      <Content
+        users={users}
+        deleteUser={deleteUser}
+        handleModal={handleModal}
+      />
       <Modal
         openModal={openModal}
         handleModal={handleModal}
