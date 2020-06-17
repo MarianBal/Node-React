@@ -1,2 +1,13 @@
-import ModalWrapper from './ModalWrapper';
-export default ModalWrapper;
+export const clearCanvas = (
+  setterOne,
+  setterTwo,
+  setterThree,
+  setterFour,
+  fn
+) => () => {
+  setterOne('');
+  setterTwo('');
+  setterThree('');
+  setterFour('');
+  fn();
+};

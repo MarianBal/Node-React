@@ -9,7 +9,8 @@ const ModalView = ({
   handleName,
   handleEmail,
   handleAddress,
-  handlePhone
+  handlePhone,
+  clearCanvas
 }) => {
   const {
     modal,
@@ -61,7 +62,7 @@ const ModalView = ({
             <input
               type={button}
               className={cancel}
-              onClick={() => handleModal()}
+              onClick={() => clearCanvas()}
               value={cancelType}
             />
             <input type={submit} className={add} value={addText} />

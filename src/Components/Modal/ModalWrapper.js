@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import ModalView from './ModalView';
 import { handleEvent } from './../../utils/handleSetters';
+import { clearCanvas } from './helper';
 
 const ModalWrapper = ({ handleModal }) => {
   const [name, setName] = useState('');
@@ -15,6 +16,7 @@ const ModalWrapper = ({ handleModal }) => {
     adress: address,
     phone: phone
   };
+  console.log(newUser);
 
   return (
     <ModalView
@@ -23,6 +25,13 @@ const ModalWrapper = ({ handleModal }) => {
       handleEmail={handleEvent(setEmail)}
       handleAddress={handleEvent(setAddress)}
       handlePhone={handleEvent(setPhone)}
+      clearCanvas={clearCanvas(
+        setName,
+        setEmail,
+        setAddress,
+        setPhone,
+        handleModal
+      )}
     />
   );
 };
