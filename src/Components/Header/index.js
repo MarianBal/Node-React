@@ -1,2 +1,2 @@
-import HeaderWrapper from './HeaderWrapper';
-export default HeaderWrapper;
+import HeaderView from './HeaderView';
+export default HeaderView;
