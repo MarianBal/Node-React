@@ -4,7 +4,7 @@ import ModalView from './ModalView';
 import { handleEvent } from './../../utils/handleSetters';
 import { clearCanvas, addUser } from './helper';
 
-const ModalWrapper = ({ handleModal }) => {
+const ModalWrapper = ({ openModal, handleModal }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [address, setAddress] = useState('');
@@ -19,6 +19,7 @@ const ModalWrapper = ({ handleModal }) => {
 
   return (
     <ModalView
+      openModal={openModal}
       handleModal={handleModal}
       handleName={handleEvent(setName)}
       handleEmail={handleEvent(setEmail)}

@@ -5,6 +5,7 @@ import { translations } from './../../constants/tranlations';
 import './modal.scss';
 
 const ModalView = ({
+  openModal,
   handleModal,
   handleName,
   handleEmail,
@@ -38,39 +39,43 @@ const ModalView = ({
   } = translations.modal;
   const { name, email, address, phone } = translations.usersText;
   return (
-    <div className={modal}>
-      <div className={modalContainer}>
-        <div className={top}>
-          <div className={modalTitle}>{addEmployee}</div>
-          <div className={close} onClick={() => handleModal()}>
-            {x}
+    <>
+      {openModal && (
+        <div className={modal}>
+          <div className={modalContainer}>
+            <div className={top}>
+              <div className={modalTitle}>{addEmployee}</div>
+              <div className={close} onClick={() => handleModal()}>
+                {x}
+              </div>
+            </div>
+            <form name={login} onSubmit={addUser}>
+              <div className={modalSubtitles}>{name}</div>
+              <input name={name} type={typeText} onChange={handleName} />
+              <div className={modalSubtitles}>{email}</div>
+              <input name={email} type={email} onChange={handleEmail} />
+              <div className={modalSubtitles}>{address}</div>
+              <textarea
+                name={address}
+                type={typeText}
+                onChange={handleAddress}
+              ></textarea>
+              <div className={modalSubtitles}>{phone}</div>
+              <input name={phone} type={typeText} onChange={handlePhone} />
+              <div className={modalFooter}>
+                <input
+                  type={button}
+                  className={cancel}
+                  onClick={() => clearCanvas()}
+                  value={cancelType}
+                />
+                <input type={submit} className={add} value={addText} />
+              </div>
+            </form>
           </div>
         </div>
-        <form name={login} onSubmit={addUser}>
-          <div className={modalSubtitles}>{name}</div>
-          <input name={name} type={typeText} onChange={handleName} />
-          <div className={modalSubtitles}>{email}</div>
-          <input name={email} type={email} onChange={handleEmail} />
-          <div className={modalSubtitles}>{address}</div>
-          <textarea
-            name={address}
-            type={typeText}
-            onChange={handleAddress}
-          ></textarea>
-          <div className={modalSubtitles}>{phone}</div>
-          <input name={phone} type={typeText} onChange={handlePhone} />
-          <div className={modalFooter}>
-            <input
-              type={button}
-              className={cancel}
-              onClick={() => clearCanvas()}
-              value={cancelType}
-            />
-            <input type={submit} className={add} value={addText} />
-          </div>
-        </form>
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 

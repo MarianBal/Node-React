@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react'; //, { useState }
 
 import HeaderView from './HeaderView';
-import { toggleValue } from './../../utils/handleSetters';
+//import { toggleValue } from './../../utils/handleSetters';
 
-const HeaderWrapper = () => {
-  const [openModal, setOpenModal] = useState(false);
+const HeaderWrapper = ({ handleModal }) => {
+  // const [openModal, setOpenModal] = useState(false);
 
   return (
     <HeaderView
-      openModal={openModal}
-      handleModal={toggleValue(setOpenModal, openModal)}
+      // openModal={openModal}
+      handleModal={handleModal}
     />
   );
 };

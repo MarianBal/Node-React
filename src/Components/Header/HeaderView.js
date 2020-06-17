@@ -2,10 +2,9 @@ import React from 'react';
 
 import { classNames } from './../../constants/classNames';
 import { translations } from './../../constants/tranlations';
-import Modal from './../Modal';
 import './header.scss';
 
-const HeaderView = ({ openModal, handleModal }) => {
+const HeaderView = ({ handleModal }) => {
   const { header, title, button, materialIcons } = classNames.header;
   const { manage, employees, newEmployee } = translations.headerText;
   return (
@@ -19,7 +18,6 @@ const HeaderView = ({ openModal, handleModal }) => {
           <p>{newEmployee}</p>
         </div>
       </div>
-      {openModal && <Modal handleModal={handleModal} />}
     </>
   );
 };
