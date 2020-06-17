@@ -11,7 +11,9 @@ export const translations = {
   },
   contentText: {
     checkbox: 'checkbox',
-    actions: 'actions'
+    actions: 'actions',
+    edit: 'edit',
+    deleteText: 'delete'
   },
   usersText: {
     name: 'name',

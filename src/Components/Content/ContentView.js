@@ -6,9 +6,25 @@ import { classNames } from './../../constants/classNames';
 import { translations } from './../../constants/tranlations';
 
 const ContentView = ({ users }) => {
-  const { content, dataTitles, check, usersClassname } = classNames.content;
-  const { name, email, address, phone } = translations.usersText;
-  console.log(users);
+  const {
+    content,
+    dataTitles,
+    check,
+    usersClassname,
+    data,
+    materialIcons,
+    red,
+    yellow
+  } = classNames.content;
+  const {
+    name,
+    email,
+    address,
+    phone,
+    edit,
+    deleteText
+  } = translations.usersText;
+
   return (
     <div className={content}>
       <div className={dataTitles}>
@@ -19,7 +35,30 @@ const ContentView = ({ users }) => {
         <div>{phone}</div>
         <div>{translations.contentText.actions}</div>
       </div>
-      <div className={usersClassname}></div>
+      <div className={usersClassname}>
+        {users.length
+          ? users.map(eachUser => {
+              return (
+                <div className={data}>
+                  <input
+                    type={translations.contentText.checkbox}
+                    className={check}
+                  />
+                  <div>{eachUser.name}</div>
+                  <div>{eachUser.email}</div>
+                  <div>{eachUser.adress}</div>
+                  <div>{eachUser.phone}</div>
+                  <i className={`${materialIcons} ${yellow}`} title={edit}>
+                    &#xE254;
+                  </i>
+                  <i className={`${materialIcons} ${red}`} title={deleteText}>
+                    &#xE872;
+                  </i>
+                </div>
+              );
+            })
+          : null}
+      </div>
     </div>
   );
 };

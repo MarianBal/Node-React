@@ -15,7 +15,11 @@ export const classNames = {
     content: 'content',
     dataTitles: 'data-titles',
     check: 'check',
-    usersClassname: 'users'
+    usersClassname: 'users',
+    data: 'data',
+    materialIcons: 'material-icons',
+    red: 'red',
+    yellow: 'yellow'
   },
   modal: {
     modal: 'modal',
