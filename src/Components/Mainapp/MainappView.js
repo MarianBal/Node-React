@@ -16,13 +16,14 @@ const MainappView = ({
   handleAddress,
   handlePhone,
   clearCanvas,
-  handleSubmit
+  handleSubmit,
+  deleteUser
 }) => {
   return (
     <div className={classNames.mainapp.mainContainer}>
       <Header handleModal={handleModal} />
       <Filter />
-      <Content users={users} />
+      <Content users={users} deleteUser={deleteUser} />
       <Modal
         openModal={openModal}
         handleModal={handleModal}

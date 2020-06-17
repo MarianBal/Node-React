@@ -1,2 +1,2 @@
-import ContentWrapper from './ContentWrapper';
-export default ContentWrapper;
+import ContentView from './ContentView';
+export default ContentView;

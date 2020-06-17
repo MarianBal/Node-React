@@ -5,7 +5,7 @@ import './../../constants/classNames';
 import { classNames } from './../../constants/classNames';
 import { translations } from './../../constants/tranlations';
 
-const ContentView = ({ users }) => {
+const ContentView = ({ users, deleteUser }) => {
   const {
     content,
     dataTitles,
@@ -51,7 +51,11 @@ const ContentView = ({ users }) => {
                   <i className={`${materialIcons} ${yellow}`} title={edit}>
                     &#xE254;
                   </i>
-                  <i className={`${materialIcons} ${red}`} title={deleteText}>
+                  <i
+                    className={`${materialIcons} ${red}`}
+                    title={deleteText}
+                    onClick={deleteUser}
+                  >
                     &#xE872;
                   </i>
                 </div>

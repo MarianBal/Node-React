@@ -44,6 +44,7 @@ const MainappWrapper = () => {
         setUsers,
         toggleValue(setOpenModal, openModal)
       )}
+      deleteUser={() => console.log('borrar')}
     />
   );
 };
