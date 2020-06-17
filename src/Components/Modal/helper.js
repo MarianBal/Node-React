@@ -1,18 +1,18 @@
 import { postAddUser } from './../../utils/call';
 
-export const clearCanvas = (
-  setterOne,
-  setterTwo,
-  setterThree,
-  setterFour,
-  fn
-) => () => {
-  setterOne('');
-  setterTwo('');
-  setterThree('');
-  setterFour('');
-  fn();
-};
+// export const clearCanvas = (
+//   setterOne,
+//   setterTwo,
+//   setterThree,
+//   setterFour,
+//   fn
+// ) => () => {
+//   setterOne('');
+//   setterTwo('');
+//   setterThree('');
+//   setterFour('');
+//   fn();
+// };
 
 export const addUser = user => event => {
   event.preventDefault();

@@ -1,2 +1,2 @@
-import ModalWrapper from './ModalWrapper';
-export default ModalWrapper;
+import ModalView from './ModalView';
+export default ModalView;

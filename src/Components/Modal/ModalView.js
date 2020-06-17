@@ -12,7 +12,7 @@ const ModalView = ({
   handleAddress,
   handlePhone,
   clearCanvas,
-  addUser
+  handleSubmit
 }) => {
   const {
     modal,
@@ -49,7 +49,7 @@ const ModalView = ({
                 {x}
               </div>
             </div>
-            <form name={login} onSubmit={addUser}>
+            <form name={login} onSubmit={handleSubmit}>
               <div className={modalSubtitles}>{name}</div>
               <input name={name} type={typeText} onChange={handleName} />
               <div className={modalSubtitles}>{email}</div>

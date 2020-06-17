@@ -7,13 +7,32 @@ import Content from './../Content';
 import Modal from './../Modal';
 import './mainapp.scss';
 
-const MainappView = ({ users, openModal, handleModal }) => {
+const MainappView = ({
+  users,
+  openModal,
+  handleModal,
+  handleName,
+  handleEmail,
+  handleAddress,
+  handlePhone,
+  clearCanvas,
+  handleSubmit
+}) => {
   return (
     <div className={classNames.mainapp.mainContainer}>
       <Header handleModal={handleModal} />
       <Filter />
       <Content users={users} />
-      <Modal openModal={openModal} handleModal={handleModal} />
+      <Modal
+        openModal={openModal}
+        handleModal={handleModal}
+        handleName={handleName}
+        handleEmail={handleEmail}
+        handleAddress={handleAddress}
+        handlePhone={handlePhone}
+        clearCanvas={clearCanvas}
+        handleSubmit={handleSubmit}
+      />
     </div>
   );
 };
