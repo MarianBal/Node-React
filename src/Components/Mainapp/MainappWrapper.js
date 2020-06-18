@@ -26,8 +26,9 @@ const MainappWrapper = () => {
   let singleUser = {
     name: name,
     email: email,
-    adress: address,
-    phone: phone
+    address: address,
+    phone: phone,
+    id: id
   };
 
   useEffect(() => {
@@ -48,12 +49,30 @@ const MainappWrapper = () => {
         setEmail,
         setAddress,
         setPhone,
+        setEditUser,
         toggleValue(setOpenModal, openModal)
       )}
       handleSubmit={
         editUser
-          ? editUserSubmit(toggleValue(setOpenModal, openModal))
-          : addUser(singleUser, setUsers, toggleValue(setOpenModal, openModal))
+          ? editUserSubmit(
+              toggleValue(setOpenModal, openModal),
+              singleUser,
+              id,
+              setUsers
+            )
+          : addUser(
+              singleUser,
+              setUsers,
+              toggleValue(setOpenModal, openModal),
+              clearCanvas(
+                setName,
+                setEmail,
+                setAddress,
+                setPhone,
+                setEditUser,
+                toggleValue(setOpenModal, openModal)
+              )
+            )
       }
       openDelete={openDelete}
       toggleDelete={toggleValue(setOpenDelete, openDelete)}
@@ -70,7 +89,8 @@ const MainappWrapper = () => {
         setEmail,
         setAddress,
         setPhone,
-        setEditUser
+        setEditUser,
+        setId
       )}
       name={name}
       email={email}

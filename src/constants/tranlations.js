@@ -28,7 +28,7 @@ export const translations = {
     name: 'name',
     typeText: 'text',
     email: 'email',
-    adress: 'adress',
+    address: 'address',
     phone: 'phone',
     button: 'button',
     cancelType: 'Cancel',

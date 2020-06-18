@@ -55,22 +55,40 @@ app.delete('/:userId', (req, res) => {
   res.json(users);
 });
 
-app.get('/search/:search', (req, res) => {
-  const searchUser = req.params.search;
+app.put('/:userId/edit', (req, res) => {
+  const editUser = req.body;
+  const id = parseInt(req.params.userId);
 
-  const found = users.filter(user => {
-    if (
-      user.name.match(searchUser) ||
-      user.email.match(searchUser) ||
-      user.address.match(searchUser) ||
-      user.phone.match(searchUser)
-    ) {
-      return user;
+  users.find(user => {
+    if (id === user.id) {
+      user.name = editUser.name;
+      user.phone = editUser.phone;
+      user.email = editUser.email;
+      user.address = editUser.address;
+
+      return res.json(users);
     }
-    return 'lalala';
-  });
 
-  res.json(found);
+    return '';
+  });
 });
+
+// app.get('/search/:search', (req, res) => {
+//   const searchUser = req.params.search;
+
+//   const found = users.filter(user => {
+//     if (
+//       user.name.match(searchUser) ||
+//       user.email.match(searchUser) ||
+//       user.address.match(searchUser) ||
+//       user.phone.match(searchUser)
+//     ) {
+//       return user;
+//     }
+//     return 'lalala';
+//   });
+
+//   res.json(found);
+// });
 
 app.listen(4000);

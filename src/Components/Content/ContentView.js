@@ -5,7 +5,7 @@ import './../../constants/classNames';
 import { classNames } from './../../constants/classNames';
 import { translations } from './../../constants/tranlations';
 
-const ContentView = ({ users, takeUserId, editUserId, name }) => {
+const ContentView = ({ users, takeUserId, editUserId }) => {
   const {
     content,
     dataTitles,

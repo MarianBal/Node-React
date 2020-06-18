@@ -1,4 +1,9 @@
-import { getUsers, postAddUser, deleteAnUser } from './../../utils/call';
+import {
+  getUsers,
+  postAddUser,
+  deleteAnUser,
+  editAnUser
+} from './../../utils/call';
 
 export const usersData = async setUsers => {
   const response = await getUsers();
@@ -10,27 +15,29 @@ export const clearCanvas = (
   setterTwo,
   setterThree,
   setterFour,
+  setterEditUser,
   fn
 ) => () => {
   setterOne(null);
   setterTwo(null);
   setterThree(null);
   setterFour(null);
+  setterEditUser(false);
   fn();
 };
 
-export const addUser = (user, setUsers, fn) => event => {
+export const addUser = (user, setUsers, fn, fnTwo) => (event, id) => {
   event.preventDefault();
-
-  postNewUser(user, setUsers, fn);
+  postNewUser(user, setUsers, fn, fnTwo);
 };
 
-const postNewUser = async (user, setUsers, fn) => {
+const postNewUser = async (user, setUsers, fn, fnTwo) => {
   const response = await postAddUser(user);
   if (response.data) {
     setUsers(response.data);
     fn();
   }
+  fnTwo();
 };
 
 export const takeUserId = (fn, setter) => id => {
@@ -53,22 +60,30 @@ export const openEditModal = (
   fn,
   setterName,
   setterEmail,
-  setterAdress,
+  setterAddress,
   setterPhone,
-  setterEdit
+  setterEdit,
+  setterId
 ) => id => {
   const user = array.find(arr => arr.id === id);
 
   setterName(user.name);
   setterEmail(user.email);
-  setterAdress(user.address);
+  setterAddress(user.address);
   setterPhone(user.phone);
+  setterId(id);
   setterEdit(true);
   fn();
 };
 
-export const editUserSubmit = fn => event => {
+export const editUserSubmit = (fn, user, id, setterUsers) => event => {
   event.preventDefault();
-  console.log('algo');
+
+  editSingleUser(id, user, setterUsers);
   fn();
+};
+
+const editSingleUser = async (id, user, setterUsers) => {
+  const response = await editAnUser(id, user);
+  if (response.data) setterUsers(response.data);
 };

@@ -21,3 +21,11 @@ export const deleteSettings = () => {
     headers: { 'Content-Type': 'application/json' }
   };
 };
+
+export const putSettings = data => {
+  return {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  };
+};
