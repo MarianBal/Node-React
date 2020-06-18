@@ -18,21 +18,18 @@ const MainappView = ({
   handlePhone,
   clearCanvas,
   handleSubmit,
-  editSingleUser,
   openDelete,
   toggleDelete,
   takeUserId,
-  deleteUser
+  deleteUser,
+  editUserId,
+  name
 }) => {
   return (
     <div className={classNames.mainapp.mainContainer}>
       <Header handleModal={handleModal} />
       <Filter />
-      <Content
-        users={users}
-        editSingleUser={editSingleUser}
-        takeUserId={takeUserId}
-      />
+      <Content users={users} takeUserId={takeUserId} editUserId={editUserId} />
       <Modal
         openModal={openModal}
         handleName={handleName}
@@ -41,6 +38,7 @@ const MainappView = ({
         handlePhone={handlePhone}
         clearCanvas={clearCanvas}
         handleSubmit={handleSubmit}
+        name={name}
       />
       <DeleteModal
         openDelete={openDelete}

@@ -11,7 +11,8 @@ const ModalView = ({
   handleAddress,
   handlePhone,
   clearCanvas,
-  handleSubmit
+  handleSubmit,
+  name
 }) => {
   const {
     modal,
@@ -34,7 +35,12 @@ const ModalView = ({
     submit,
     addText
   } = translations.modal;
-  const { name, email, address, phone } = translations.usersText;
+  const {
+    nameText,
+    emailText,
+    addressText,
+    phoneText
+  } = translations.usersText;
   return (
     <>
       {openModal && (
@@ -47,31 +53,32 @@ const ModalView = ({
               </div>
             </div>
             <form name={login} onSubmit={handleSubmit}>
-              <div className={modalSubtitles}>{name}</div>
+              <div className={modalSubtitles}>{nameText}</div>
               <input
-                name={name}
+                name={nameText}
                 type={typeText}
                 onChange={handleName}
                 required={true}
+                value={name}
               />
-              <div className={modalSubtitles}>{email}</div>
+              <div className={modalSubtitles}>{emailText}</div>
               <input
-                name={email}
-                type={email}
+                name={emailText}
+                type={emailText}
                 onChange={handleEmail}
                 required={true}
               />
-              <div className={modalSubtitles}>{address}</div>
+              <div className={modalSubtitles}>{addressText}</div>
               <textarea
-                name={address}
+                name={addressText}
                 type={typeText}
                 onChange={handleAddress}
                 required={true}
               />
 
-              <div className={modalSubtitles}>{phone}</div>
+              <div className={modalSubtitles}>{phoneText}</div>
               <input
-                name={phone}
+                name={phoneText}
                 type={typeText}
                 onChange={handlePhone}
                 required={true}

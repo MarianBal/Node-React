@@ -55,4 +55,24 @@ app.delete('/:userId', (req, res) => {
   res.json(users);
 });
 
+ver
+app.get('/search/:search', (req, res) => {
+  const searchUser = req.params.search;
+
+  const found = users.filter(user => {
+    if (
+      user.name.match(searchUser) ||
+      user.email.match(searchUser) ||
+      user.address.match(searchUser) ||
+      user.phone.match(searchUser) ||
+
+    ) {
+      return user;
+    }
+    return 'lalala';
+  });
+
+  res.json(found);
+});
+
 app.listen(4000);

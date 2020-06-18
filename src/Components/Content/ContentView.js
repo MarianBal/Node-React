@@ -5,7 +5,7 @@ import './../../constants/classNames';
 import { classNames } from './../../constants/classNames';
 import { translations } from './../../constants/tranlations';
 
-const ContentView = ({ users, editSingleUser, takeUserId }) => {
+const ContentView = ({ users, takeUserId, editUserId, name }) => {
   const {
     content,
     dataTitles,
@@ -17,10 +17,10 @@ const ContentView = ({ users, editSingleUser, takeUserId }) => {
     yellow
   } = classNames.content;
   const {
-    name,
-    email,
-    address,
-    phone,
+    nameText,
+    emailText,
+    addressText,
+    phoneText,
     edit,
     deleteText
   } = translations.usersText;
@@ -29,10 +29,10 @@ const ContentView = ({ users, editSingleUser, takeUserId }) => {
     <div className={content}>
       <div className={dataTitles}>
         <input type={translations.contentText.checkbox} className={check} />
-        <div>{name}</div>
-        <div>{email}</div>
-        <div>{address}</div>
-        <div>{phone}</div>
+        <div>{nameText}</div>
+        <div>{emailText}</div>
+        <div>{addressText}</div>
+        <div>{phoneText}</div>
         <div>{translations.contentText.actions}</div>
       </div>
       <div className={usersClassname}>
@@ -51,7 +51,7 @@ const ContentView = ({ users, editSingleUser, takeUserId }) => {
                   <i
                     className={`${materialIcons} ${yellow}`}
                     title={edit}
-                    onClick={() => editSingleUser(eachUser.id)}
+                    onClick={() => editUserId(eachUser.id)}
                   >
                     &#xE254;
                   </i>

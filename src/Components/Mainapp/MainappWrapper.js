@@ -6,8 +6,8 @@ import {
   clearCanvas,
   addUser,
   deleteUser,
-  editSingleUser,
-  takeUserId
+  takeUserId,
+  openEditModal
 } from './helper';
 import { toggleValue, handleEvent } from './../../utils/handleSetters';
 
@@ -15,18 +15,20 @@ const MainappWrapper = () => {
   const [users, setUsers] = useState([]);
   const [openModal, setOpenModal] = useState(false);
   const [openDelete, setOpenDelete] = useState(false);
-  const [name, setName] = useState(null);
+  const [name, setName] = useState(' ');
   const [email, setEmail] = useState(null);
   const [address, setAddress] = useState(null);
   const [phone, setPhone] = useState(null);
   const [id, setId] = useState(null);
 
-  const singleUser = {
+  let singleUser = {
     name: name,
     email: email,
     adress: address,
     phone: phone
   };
+
+  console.log(name);
 
   useEffect(() => {
     usersData(setUsers);
@@ -52,10 +54,6 @@ const MainappWrapper = () => {
         setUsers,
         toggleValue(setOpenModal, openModal)
       )}
-      editSingleUser={editSingleUser(
-        toggleValue(setOpenModal, openModal),
-        users
-      )}
       openDelete={openDelete}
       toggleDelete={toggleValue(setOpenDelete, openDelete)}
       takeUserId={takeUserId(toggleValue(setOpenDelete, openDelete), setId)}
@@ -64,6 +62,15 @@ const MainappWrapper = () => {
         setUsers,
         toggleValue(setOpenDelete, openDelete)
       )}
+      editUserId={openEditModal(
+        users,
+        toggleValue(setOpenModal, openModal),
+        setName,
+        setEmail,
+        setAddress,
+        setPhone
+      )}
+      name={name}
     />
   );
 };

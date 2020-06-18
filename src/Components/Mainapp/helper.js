@@ -48,8 +48,19 @@ const deleteSingleUser = async (id, setUsers) => {
   if (response.data) setUsers(response.data);
 };
 
-export const editSingleUser = (fn, users, setSingleUser) => id => {
+export const openEditModal = (
+  array,
+  fn,
+  setterName,
+  setterEmail,
+  setterAdress,
+  setterPhone
+) => id => {
+  const user = array.find(arr => arr.id === id);
+  setterName(user.name);
+  setterEmail(user.email);
+  setterAdress(user.address);
+  setterPhone(user.phone);
+
   fn();
-  const singleUser = users.find(user => user.id === id);
-  setSingleUser(singleUser);
 };

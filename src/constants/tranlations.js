@@ -16,10 +16,10 @@ export const translations = {
     deleteText: 'delete'
   },
   usersText: {
-    name: 'name',
-    email: 'email',
-    address: 'address',
-    phone: 'phone'
+    nameText: 'name',
+    emailText: 'email',
+    addressText: 'address',
+    phoneText: 'phone'
   },
   modal: {
     addEmployee: 'add employee',

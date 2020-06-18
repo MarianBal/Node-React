@@ -9,7 +9,8 @@ const ModalWrapper = ({
   handleAddress,
   handlePhone,
   clearCanvas,
-  handleSubmit
+  handleSubmit,
+  name
 }) => {
   return (
     <ModalView
@@ -20,6 +21,7 @@ const ModalWrapper = ({
       handlePhone={handlePhone}
       clearCanvas={clearCanvas}
       handleSubmit={handleSubmit}
+      name={name}
     />
   );
 };
