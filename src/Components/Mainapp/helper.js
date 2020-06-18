@@ -54,7 +54,8 @@ export const openEditModal = (
   setterName,
   setterEmail,
   setterAdress,
-  setterPhone
+  setterPhone,
+  setterEdit
 ) => id => {
   const user = array.find(arr => arr.id === id);
 
@@ -62,6 +63,12 @@ export const openEditModal = (
   setterEmail(user.email);
   setterAdress(user.address);
   setterPhone(user.phone);
+  setterEdit(true);
+  fn();
+};
 
+export const editUserSubmit = fn => event => {
+  event.preventDefault();
+  console.log('algo');
   fn();
 };

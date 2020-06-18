@@ -7,7 +7,8 @@ import {
   addUser,
   deleteUser,
   takeUserId,
-  openEditModal
+  openEditModal,
+  editUserSubmit
 } from './helper';
 import { toggleValue, handleEvent } from './../../utils/handleSetters';
 
@@ -20,6 +21,7 @@ const MainappWrapper = () => {
   const [address, setAddress] = useState(null);
   const [phone, setPhone] = useState(null);
   const [id, setId] = useState(null);
+  const [editUser, setEditUser] = useState(false);
 
   let singleUser = {
     name: name,
@@ -48,11 +50,11 @@ const MainappWrapper = () => {
         setPhone,
         toggleValue(setOpenModal, openModal)
       )}
-      handleSubmit={addUser(
-        singleUser,
-        setUsers,
-        toggleValue(setOpenModal, openModal)
-      )}
+      handleSubmit={
+        editUser
+          ? editUserSubmit(toggleValue(setOpenModal, openModal))
+          : addUser(singleUser, setUsers, toggleValue(setOpenModal, openModal))
+      }
       openDelete={openDelete}
       toggleDelete={toggleValue(setOpenDelete, openDelete)}
       takeUserId={takeUserId(toggleValue(setOpenDelete, openDelete), setId)}
@@ -67,7 +69,8 @@ const MainappWrapper = () => {
         setName,
         setEmail,
         setAddress,
-        setPhone
+        setPhone,
+        setEditUser
       )}
       name={name}
       email={email}
