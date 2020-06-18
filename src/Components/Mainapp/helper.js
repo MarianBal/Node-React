@@ -2,7 +2,8 @@ import {
   getUsers,
   postAddUser,
   deleteAnUser,
-  editAnUser
+  editAnUser,
+  getAnSearch
 } from './../../utils/call';
 
 export const usersData = async setUsers => {
@@ -85,5 +86,16 @@ export const editUserSubmit = (fn, user, id, setterUsers) => event => {
 
 const editSingleUser = async (id, user, setterUsers) => {
   const response = await editAnUser(id, user);
+  if (response.data) setterUsers(response.data);
+};
+
+export const handleFilterSubmit = (data, setterUsers) => event => {
+  if (event.key === 'Enter') {
+    searchSingleUser(data, setterUsers);
+  }
+};
+
+const searchSingleUser = async (data, setterUsers) => {
+  const response = await getAnSearch(data);
   if (response.data) setterUsers(response.data);
 };

@@ -73,22 +73,25 @@ app.put('/:userId/edit', (req, res) => {
   });
 });
 
-// app.get('/search/:search', (req, res) => {
-//   const searchUser = req.params.search;
+app.get('/search/:search', (req, res) => {
+  const searchUser = req.params.search;
 
-//   const found = users.filter(user => {
-//     if (
-//       user.name.match(searchUser) ||
-//       user.email.match(searchUser) ||
-//       user.address.match(searchUser) ||
-//       user.phone.match(searchUser)
-//     ) {
-//       return user;
-//     }
-//     return 'lalala';
-//   });
+  const found = users.filter(user => {
+    if (
+      user.name.match(searchUser.toLowerCase()) ||
+      user.email.match(searchUser) ||
+      user.address.match(searchUser) ||
+      user.phone.match(searchUser)
+    ) {
+      return user;
+    }
+    return;
+  });
+  res.json(found.length ? found : users);
+});
 
-//   res.json(found);
-// });
+app.get('/search/', (req, res) => {
+  res.json(users);
+});
 
 app.listen(4000);

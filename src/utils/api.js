@@ -21,3 +21,7 @@ export const deleteUser = id => () => {
 export const editUser = (id, data) => () => {
   return fetch(`${url}${id}${endpoints.edit}`, putSettings(data));
 };
+
+export const getSearch = data => () => {
+  return fetch(`${url}${endpoints.search}/${data}`, getSettings());
+};

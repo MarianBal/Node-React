@@ -8,7 +8,8 @@ import {
   deleteUser,
   takeUserId,
   openEditModal,
-  editUserSubmit
+  editUserSubmit,
+  handleFilterSubmit
 } from './helper';
 import { toggleValue, handleEvent } from './../../utils/handleSetters';
 
@@ -22,6 +23,7 @@ const MainappWrapper = () => {
   const [phone, setPhone] = useState(null);
   const [id, setId] = useState(null);
   const [editUser, setEditUser] = useState(false);
+  const [filter, setFilter] = useState('');
 
   let singleUser = {
     name: name,
@@ -96,6 +98,8 @@ const MainappWrapper = () => {
       email={email}
       address={address}
       phone={phone}
+      handleFilter={handleEvent(setFilter)}
+      handleFilterSubmit={handleFilterSubmit(filter, setUsers)}
     />
   );
 };

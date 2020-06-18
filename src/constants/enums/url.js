@@ -1,5 +1,6 @@
 export const endpoints = {
-  edit: '/edit'
+  edit: '/edit',
+  search: 'search'
 };
 
 export const url = 'http://localhost:4000/';

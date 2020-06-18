@@ -4,7 +4,7 @@ import { classNames } from './../../constants/classNames';
 import { translations } from './../../constants/tranlations';
 import './filter.scss';
 
-const FilterView = () => {
+const FilterView = ({ handleFilter, handleFilterSubmit }) => {
   const { placeholder, name, type } = translations.filterText;
   return (
     <div className={classNames.filter.filter}>
@@ -12,7 +12,8 @@ const FilterView = () => {
         placeholder={placeholder}
         name={name}
         type={type}
-        onKeyPress={() => console.log('algo')}
+        onChange={handleFilter}
+        onKeyPress={handleFilterSubmit}
       />
     </div>
   );

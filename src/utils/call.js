@@ -1,4 +1,4 @@
-import { getData, addUser, deleteUser, editUser } from './api';
+import { getData, addUser, deleteUser, editUser, getSearch } from './api';
 import { caller } from './caller';
 
 export const getUsers = async () => {
@@ -18,6 +18,10 @@ export const deleteAnUser = async id => {
 
 export const editAnUser = async (id, data) => {
   const response = await caller(editUser(id, data));
-  console.log(response);
+  return response;
+};
+
+export const getAnSearch = async data => {
+  const response = await caller(getSearch(data));
   return response;
 };

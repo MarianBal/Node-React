@@ -26,12 +26,17 @@ const MainappView = ({
   name,
   email,
   address,
-  phone
+  phone,
+  handleFilter,
+  handleFilterSubmit
 }) => {
   return (
     <div className={classNames.mainapp.mainContainer}>
       <Header handleModal={handleModal} />
-      <Filter />
+      <Filter
+        handleFilter={handleFilter}
+        handleFilterSubmit={handleFilterSubmit}
+      />
       <Content users={users} takeUserId={takeUserId} editUserId={editUserId} />
       <Modal
         openModal={openModal}
