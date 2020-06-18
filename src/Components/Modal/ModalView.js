@@ -79,10 +79,8 @@ const ModalView = ({
                 type={typeText}
                 onChange={handleAddress}
                 required={true}
-              >
-                {address}
-              </textarea>
-
+                value={address}
+              />
               <div className={modalSubtitles}>{phoneText}</div>
               <input
                 name={phoneText}
