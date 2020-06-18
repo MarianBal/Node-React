@@ -1,2 +1,2 @@
-import FilterWrapper from './FilterWrapper';
-export default FilterWrapper;
+import FilterView from './FilterView';
+export default FilterView;
