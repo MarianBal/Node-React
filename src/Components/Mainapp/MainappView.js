@@ -23,7 +23,9 @@ const MainappView = ({
   takeUserId,
   deleteUser,
   editUserId,
-  name
+  name,
+  email,
+  address
 }) => {
   return (
     <div className={classNames.mainapp.mainContainer}>
@@ -39,6 +41,8 @@ const MainappView = ({
         clearCanvas={clearCanvas}
         handleSubmit={handleSubmit}
         name={name}
+        email={email}
+        address={address}
       />
       <DeleteModal
         openDelete={openDelete}

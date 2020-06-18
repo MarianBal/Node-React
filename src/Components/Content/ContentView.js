@@ -46,7 +46,7 @@ const ContentView = ({ users, takeUserId, editUserId, name }) => {
                   />
                   <div>{eachUser.name}</div>
                   <div>{eachUser.email}</div>
-                  <div>{eachUser.adress}</div>
+                  <div>{eachUser.address}</div>
                   <div>{eachUser.phone}</div>
                   <i
                     className={`${materialIcons} ${yellow}`}

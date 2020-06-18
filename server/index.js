@@ -11,21 +11,21 @@ const users = [
     name: 'bruce wayne',
     phone: '08009991111',
     email: 'bruce@wayneenterpreises.com',
-    adress: 'Gotham City'
+    address: 'Gotham City'
   },
   {
     id: 2,
     name: 'ada lovelace',
     phone: '0554755558',
     email: 'contacto@gmail.com',
-    adress: 'Flores'
+    address: 'Flores'
   },
   {
     id: 3,
     name: 'grace hopper',
     phone: '26588833448',
     email: 'contacto@hotmail.com',
-    adress: 'Almagro'
+    address: 'Almagro'
   }
 ];
 
@@ -55,7 +55,6 @@ app.delete('/:userId', (req, res) => {
   res.json(users);
 });
 
-ver
 app.get('/search/:search', (req, res) => {
   const searchUser = req.params.search;
 
@@ -64,8 +63,7 @@ app.get('/search/:search', (req, res) => {
       user.name.match(searchUser) ||
       user.email.match(searchUser) ||
       user.address.match(searchUser) ||
-      user.phone.match(searchUser) ||
-
+      user.phone.match(searchUser)
     ) {
       return user;
     }

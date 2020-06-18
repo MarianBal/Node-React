@@ -28,7 +28,7 @@ const MainappWrapper = () => {
     phone: phone
   };
 
-  console.log(name);
+  console.log(address);
 
   useEffect(() => {
     usersData(setUsers);
@@ -71,6 +71,8 @@ const MainappWrapper = () => {
         setPhone
       )}
       name={name}
+      email={email}
+      address={address}
     />
   );
 };

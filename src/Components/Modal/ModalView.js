@@ -12,7 +12,9 @@ const ModalView = ({
   handlePhone,
   clearCanvas,
   handleSubmit,
-  name
+  name,
+  email,
+  address
 }) => {
   const {
     modal,
@@ -41,6 +43,8 @@ const ModalView = ({
     addressText,
     phoneText
   } = translations.usersText;
+
+  console.log(address);
   return (
     <>
       {openModal && (
@@ -67,6 +71,7 @@ const ModalView = ({
                 type={emailText}
                 onChange={handleEmail}
                 required={true}
+                value={email}
               />
               <div className={modalSubtitles}>{addressText}</div>
               <textarea
@@ -74,7 +79,9 @@ const ModalView = ({
                 type={typeText}
                 onChange={handleAddress}
                 required={true}
-              />
+              >
+                {address}
+              </textarea>
 
               <div className={modalSubtitles}>{phoneText}</div>
               <input
