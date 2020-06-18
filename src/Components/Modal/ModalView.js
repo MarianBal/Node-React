@@ -14,7 +14,8 @@ const ModalView = ({
   handleSubmit,
   name,
   email,
-  address
+  address,
+  phone
 }) => {
   const {
     modal,
@@ -44,7 +45,6 @@ const ModalView = ({
     phoneText
   } = translations.usersText;
 
-  console.log(address);
   return (
     <>
       {openModal && (
@@ -89,6 +89,7 @@ const ModalView = ({
                 type={typeText}
                 onChange={handlePhone}
                 required={true}
+                value={phone}
               />
               <div className={modalFooter}>
                 <input

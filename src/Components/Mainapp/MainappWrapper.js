@@ -28,11 +28,10 @@ const MainappWrapper = () => {
     phone: phone
   };
 
-  console.log(address);
-
   useEffect(() => {
     usersData(setUsers);
   }, []);
+
   return (
     <MainappView
       users={users}
@@ -73,6 +72,7 @@ const MainappWrapper = () => {
       name={name}
       email={email}
       address={address}
+      phone={phone}
     />
   );
 };

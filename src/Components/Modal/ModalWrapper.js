@@ -12,7 +12,8 @@ const ModalWrapper = ({
   handleSubmit,
   name,
   email,
-  address
+  address,
+  phone
 }) => {
   return (
     <ModalView
@@ -26,6 +27,7 @@ const ModalWrapper = ({
       name={name}
       email={email}
       address={address}
+      phone={phone}
     />
   );
 };

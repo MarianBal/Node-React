@@ -57,6 +57,7 @@ export const openEditModal = (
   setterPhone
 ) => id => {
   const user = array.find(arr => arr.id === id);
+
   setterName(user.name);
   setterEmail(user.email);
   setterAdress(user.address);

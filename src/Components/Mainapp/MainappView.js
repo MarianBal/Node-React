@@ -25,7 +25,8 @@ const MainappView = ({
   editUserId,
   name,
   email,
-  address
+  address,
+  phone
 }) => {
   return (
     <div className={classNames.mainapp.mainContainer}>
@@ -43,6 +44,7 @@ const MainappView = ({
         name={name}
         email={email}
         address={address}
+        phone={phone}
       />
       <DeleteModal
         openDelete={openDelete}
