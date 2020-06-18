@@ -31,5 +31,16 @@ export const classNames = {
     modalFooter: 'modal-footer',
     cancel: 'cancel',
     add: 'add'
+  },
+  deleteModal: {
+    deleteModal: 'delete-modal',
+    deleteContainer: 'delete-container',
+    deleteTop: 'delete-top',
+    modalTitle: 'modal-title',
+    modalClose: 'close',
+    deleteSubtitles: 'delete-subtitles',
+    deleteFooter: 'delete-footer',
+    modalCancel: 'cancel',
+    modalDelete: 'delete'
   }
 };

@@ -33,6 +33,11 @@ const postNewUser = async (user, setUsers, fn) => {
   }
 };
 
+export const takeUserId = (fn, setter) => id => {
+  fn();
+  setter(id);
+};
+
 export const deleteUser = setUsers => id => {
   deleteSingleUser(id, setUsers);
 };

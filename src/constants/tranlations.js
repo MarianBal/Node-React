@@ -34,5 +34,13 @@ export const translations = {
     cancelType: 'Cancel',
     submit: 'submit',
     addText: 'add'
+  },
+  deleteModal: {
+    titleText: 'delete employee',
+    modalText: 'Are you sure you want to delete these Records?',
+    modalUndoneText: 'This action cannot be undone.',
+    cancelText: 'Cancel',
+    deleteText: 'Delete',
+    x: ' x'
   }
 };

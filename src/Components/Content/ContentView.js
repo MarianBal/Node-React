@@ -5,7 +5,7 @@ import './../../constants/classNames';
 import { classNames } from './../../constants/classNames';
 import { translations } from './../../constants/tranlations';
 
-const ContentView = ({ users, deleteUser, handleModal, editSingleUser }) => {
+const ContentView = ({ users, editSingleUser, takeUserId }) => {
   const {
     content,
     dataTitles,
@@ -58,7 +58,7 @@ const ContentView = ({ users, deleteUser, handleModal, editSingleUser }) => {
                   <i
                     className={`${materialIcons} ${red}`}
                     title={deleteText}
-                    onClick={() => deleteUser(eachUser.id)}
+                    onClick={() => takeUserId(eachUser.id)}
                   >
                     &#xE872;
                   </i>

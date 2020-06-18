@@ -5,6 +5,7 @@ import Header from './../Header';
 import Filter from './../Filter';
 import Content from './../Content';
 import Modal from './../Modal';
+import DeleteModal from './../DeleteModal';
 import './mainapp.scss';
 
 const MainappView = ({
@@ -17,9 +18,11 @@ const MainappView = ({
   handlePhone,
   clearCanvas,
   handleSubmit,
-  deleteUser,
   editSingleUser,
-  singleUser
+  openDelete,
+  toggleDelete,
+  takeUserId,
+  deleteUser
 }) => {
   return (
     <div className={classNames.mainapp.mainContainer}>
@@ -27,9 +30,8 @@ const MainappView = ({
       <Filter />
       <Content
         users={users}
-        deleteUser={deleteUser}
-        handleModal={handleModal}
         editSingleUser={editSingleUser}
+        takeUserId={takeUserId}
       />
       <Modal
         openModal={openModal}
@@ -39,7 +41,11 @@ const MainappView = ({
         handlePhone={handlePhone}
         clearCanvas={clearCanvas}
         handleSubmit={handleSubmit}
-        singleUser={singleUser}
+      />
+      <DeleteModal
+        openDelete={openDelete}
+        toggleDelete={toggleDelete}
+        deleteUser={deleteUser}
       />
     </div>
   );

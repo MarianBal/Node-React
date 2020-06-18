@@ -6,18 +6,22 @@ import {
   clearCanvas,
   addUser,
   deleteUser,
-  editSingleUser
+  editSingleUser,
+  takeUserId
 } from './helper';
-import { toggleValue } from './../../utils/handleSetters';
-import { handleEvent } from './../../utils/handleSetters';
+import { toggleValue, handleEvent } from './../../utils/handleSetters';
 
 const MainappWrapper = () => {
   const [users, setUsers] = useState([]);
   const [openModal, setOpenModal] = useState(false);
+  const [openDelete, setOpenDelete] = useState(false);
   const [name, setName] = useState(null);
   const [email, setEmail] = useState(null);
   const [address, setAddress] = useState(null);
   const [phone, setPhone] = useState(null);
+  const [id, setId] = useState(null);
+
+  console.log(id);
 
   const singleUser = {
     name: name,
@@ -50,12 +54,14 @@ const MainappWrapper = () => {
         setUsers,
         toggleValue(setOpenModal, openModal)
       )}
-      deleteUser={deleteUser(setUsers)}
       editSingleUser={editSingleUser(
         toggleValue(setOpenModal, openModal),
         users
       )}
-      singleUser={singleUser}
+      openDelete={openDelete}
+      toggleDelete={toggleValue(setOpenDelete, openDelete)}
+      takeUserId={takeUserId(toggleValue(setOpenDelete, openDelete), setId)}
+      deleteUser={deleteUser(setUsers)}
     />
   );
 };
