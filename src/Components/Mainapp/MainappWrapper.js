@@ -17,11 +17,11 @@ const MainappWrapper = () => {
   const [users, setUsers] = useState([]);
   const [openModal, setOpenModal] = useState(false);
   const [openDelete, setOpenDelete] = useState(false);
-  const [name, setName] = useState(' ');
-  const [email, setEmail] = useState(null);
-  const [address, setAddress] = useState(null);
-  const [phone, setPhone] = useState(null);
-  const [id, setId] = useState(null);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [address, setAddress] = useState('');
+  const [phone, setPhone] = useState('');
+  const [id, setId] = useState('');
   const [editUser, setEditUser] = useState(false);
   const [filter, setFilter] = useState('');
 

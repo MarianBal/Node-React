@@ -5,23 +5,31 @@ import {
   putSettings
 } from './fetchSettings';
 import { endpoints, url } from './../constants/enums/url';
+const { init } = endpoints;
+
+const apiURLConstructor = baseURL => extension => baseURL + extension;
+let baseUrl = url; //DEFAULT URL IS DEVELOPMENT
+if (window._CONFIG_) {
+  baseUrl = window._CONFIG_.API_URL;
+}
+const nodeApi = apiURLConstructor(baseUrl);
 
 export const getData = () => () => {
-  return fetch(url, getSettings());
+  return fetch(nodeApi(init), getSettings());
 };
 
 export const addUser = data => () => {
-  return fetch(url, postSettings(data));
+  return fetch(nodeApi(init), postSettings(data));
 };
 
 export const deleteUser = id => () => {
-  return fetch(`${url}${id}`, deleteSettings());
+  return fetch(nodeApi(`${init}${id}`), deleteSettings());
 };
 
 export const editUser = (id, data) => () => {
-  return fetch(`${url}${id}${endpoints.edit}`, putSettings(data));
+  return fetch(nodeApi(`${init}${id}${endpoints.edit}`), putSettings(data));
 };
 
 export const getSearch = data => () => {
-  return fetch(`${url}${endpoints.search}/${data}`, getSettings());
+  return fetch(nodeApi(`${init}${endpoints.search}/${data}`), getSettings());
 };
