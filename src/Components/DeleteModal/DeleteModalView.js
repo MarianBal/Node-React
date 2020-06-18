@@ -44,7 +44,6 @@ const DeleteModalView = ({ openDelete, toggleDelete, deleteUser }) => {
                 {cancelText}
               </div>
               <div className={modalDelete} onClick={() => deleteUser()}>
-                {' '}
                 {deleteText}
               </div>
             </div>
