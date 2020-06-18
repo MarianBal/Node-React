@@ -21,8 +21,6 @@ const MainappWrapper = () => {
   const [phone, setPhone] = useState(null);
   const [id, setId] = useState(null);
 
-  console.log(id);
-
   const singleUser = {
     name: name,
     email: email,
@@ -61,7 +59,11 @@ const MainappWrapper = () => {
       openDelete={openDelete}
       toggleDelete={toggleValue(setOpenDelete, openDelete)}
       takeUserId={takeUserId(toggleValue(setOpenDelete, openDelete), setId)}
-      deleteUser={deleteUser(setUsers)}
+      deleteUser={deleteUser(
+        id,
+        setUsers,
+        toggleValue(setOpenDelete, openDelete)
+      )}
     />
   );
 };

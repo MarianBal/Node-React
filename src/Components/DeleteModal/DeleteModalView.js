@@ -4,7 +4,7 @@ import { classNames } from './../../constants/classNames';
 import { translations } from './../../constants/tranlations';
 import './deleteModal.scss';
 
-const DeleteModalView = ({ openDelete, toggleDelete }) => {
+const DeleteModalView = ({ openDelete, toggleDelete, deleteUser }) => {
   const {
     deleteModal,
     deleteContainer,
@@ -43,7 +43,10 @@ const DeleteModalView = ({ openDelete, toggleDelete }) => {
               <div className={modalCancel} onClick={() => toggleDelete()}>
                 {cancelText}
               </div>
-              <div className={modalDelete}> {deleteText}</div>
+              <div className={modalDelete} onClick={() => deleteUser()}>
+                {' '}
+                {deleteText}
+              </div>
             </div>
           </div>
         </div>
