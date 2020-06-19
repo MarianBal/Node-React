@@ -5,6 +5,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+const port = 4000;
+
 const users = [
   {
     id: 1,
@@ -85,7 +87,7 @@ app.get('/search/:search', (req, res) => {
     ) {
       return user;
     }
-    return;
+    return '';
   });
   res.json(found.length ? found : users);
 });
@@ -94,4 +96,6 @@ app.get('/search/', (req, res) => {
   res.json(users);
 });
 
-app.listen(4000);
+app.listen(port, () =>
+  console.log(`Example app listening at http://localhost:${port}`)
+);
