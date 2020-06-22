@@ -31,41 +31,6 @@ userSchema.methods.speak = function () {
 
 const User = mongoose.model('User', userSchema);
 
-// const user1 = new User({
-//   name: 'bruce wayne',
-//   phone: '08009991111',
-//   email: 'bruce@wayneenterpreises.com',
-//   address: 'Gotham City'
-// });
-
-// user1.save((err, user1) => {
-//   if (err) return console.error(err);
-//   //user1.speak();
-// });
-
-// const user2 = new User({
-//   name: 'ada lovelace',
-//   phone: '0554755558',
-//   email: 'contacto@gmail.com',
-//   address: 'Flores'
-// });
-
-// user2.save((err, user2) => {
-//   if (err) return console.error(err);
-//   //user2.speak();
-// });
-// const user3 = new User({
-//   name: 'grace hopper',
-//   phone: '26588833448',
-//   email: 'contacto@hotmail.com',
-//   address: 'Almagro'
-// });
-
-// user3.save((err, user3) => {
-//   if (err) return console.error(err);
-//   //user3.speak();
-// });
-
 app.all('/', (req, res, next) => {
   console.log('¡Hello World!');
   next();
@@ -78,15 +43,39 @@ app.get('/', (req, res) => {
   });
 });
 
-// app.post('/', (req, res) => {
-//   const newUser = req.body;
-//   newUser.id = nextId(users);
-//   users.push(newUser);
-//   res.json(users);
-// });
+app.post('/', (req, res) => {
+  const newUser = req.body;
+  const user = new User({
+    name: newUser.name,
+    phone: newUser.phone,
+    email: newUser.email,
+    address: newUser.address
+  });
 
-// app.delete('/:userId', (req, res) => {
-//   const id = parseInt(req.params.userId);
+  user.save((err, user) => {
+    if (err) return console.error(err);
+    user.speak();
+  });
+
+  User.find(function (err, users) {
+    if (err) return console.error(err);
+    res.json(users);
+  });
+});
+
+app.delete('/:userId', (req, res) => {
+  const id = parseInt(req.params.userId);
+  console.log('id:', id);
+  // User.find({ _id: id }, function (err, users) {
+  //   if (err) return console.error(err);
+
+  //   User.remove({ _id: id });
+  // });
+  // User.find(function (err, users) {
+  //   if (err) return console.error(err);
+  //   res.json(users);
+  // });
+});
 
 //   users.filter((user, i) => user.id === id && users.splice(i, 1));
 

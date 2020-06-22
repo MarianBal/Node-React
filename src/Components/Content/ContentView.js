@@ -51,14 +51,14 @@ const ContentView = ({ users, takeUserId, editUserId }) => {
                   <i
                     className={`${materialIcons} ${yellow}`}
                     title={edit}
-                    onClick={() => editUserId(eachUser.id)}
+                    onClick={() => editUserId(eachUser._id)}
                   >
                     &#xE254;
                   </i>
                   <i
                     className={`${materialIcons} ${red}`}
                     title={deleteText}
-                    onClick={() => takeUserId(eachUser.id)}
+                    onClick={() => takeUserId(eachUser._id)}
                   >
                     &#xE872;
                   </i>

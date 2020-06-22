@@ -66,7 +66,7 @@ export const openEditModal = (
   setterEdit,
   setterId
 ) => id => {
-  const user = array.find(arr => arr.id === id);
+  const user = array.find(arr => arr._id === id);
 
   setterName(user.name);
   setterEmail(user.email);
