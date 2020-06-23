@@ -64,17 +64,19 @@ app.post('/', (req, res) => {
 });
 
 app.delete('/:userId', (req, res) => {
-  const id = parseInt(req.params.userId);
-  console.log('id:', id);
-  // User.find({ _id: id }, function (err, users) {
-  //   if (err) return console.error(err);
+  const id = req.params.userId;
 
-  //   User.remove({ _id: id });
-  // });
-  // User.find(function (err, users) {
-  //   if (err) return console.error(err);
-  //   res.json(users);
-  // });
+  const removeUser = async () => {
+    const response = await User.remove({ _id: id });
+    return response.deletedCount; // Number of documents removed
+  };
+
+  removeUser();
+
+  User.find(function (err, users) {
+    if (err) return console.error(err);
+    res.json(users);
+  });
 });
 
 //   users.filter((user, i) => user.id === id && users.splice(i, 1));
