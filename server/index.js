@@ -39,7 +39,7 @@ app.all('/', (req, res, next) => {
 app.get('/', (req, res) => {
   User.find(function (err, users) {
     if (err) return console.error(err);
-    res.json(users);
+    return res.json(users);
   });
 });
 
@@ -59,7 +59,7 @@ app.post('/', (req, res) => {
 
   User.find(function (err, users) {
     if (err) return console.error(err);
-    res.json(users);
+    return res.json(users);
   });
 });
 
@@ -68,39 +68,35 @@ app.delete('/:userId', (req, res) => {
 
   const removeUser = async () => {
     const response = await User.remove({ _id: id });
-    return response.deletedCount; // Number of documents removed
+    return response.deletedCount;
   };
 
   removeUser();
 
   User.find(function (err, users) {
     if (err) return console.error(err);
-    res.json(users);
+    return res.json(users);
   });
 });
 
-//   users.filter((user, i) => user.id === id && users.splice(i, 1));
+app.put('/:userId/edit', (req, res) => {
+  const id = req.params.userId;
+  console.log(req.body);
 
-//   res.json(users);
-// });
+  const editUser = async () => {
+    let response = await User.findOneAndUpdate({ _id: id }, req.body, {
+      new: true
+    });
+    await response.save();
+    return response;
+  };
+  editUser();
 
-// app.put('/:userId/edit', (req, res) => {
-//   const editUser = req.body;
-//   const id = parseInt(req.params.userId);
-
-//   users.find(user => {
-//     if (id === user.id) {
-//       user.name = editUser.name;
-//       user.phone = editUser.phone;
-//       user.email = editUser.email;
-//       user.address = editUser.address;
-
-//       return res.json(users);
-//     }
-
-//     return '';
-//   });
-// });
+  User.find(function (err, users) {
+    if (err) return console.error(err);
+    return res.json(users);
+  });
+});
 
 // app.get('/search/:search', (req, res) => {
 //   const searchUser = req.params.search;
