@@ -94,6 +94,7 @@ app.put('/:userId/edit', (req, res) => {
 
   User.find(function (err, users) {
     if (err) return console.error(err);
+    console.log(users);
     return res.json(users);
   });
 });
