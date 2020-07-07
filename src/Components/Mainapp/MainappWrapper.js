@@ -60,7 +60,8 @@ const MainappWrapper = () => {
               toggleValue(setOpenModal, openModal),
               singleUser,
               id,
-              setUsers
+              setUsers,
+              users
             )
           : addUser(
               singleUser,
@@ -83,7 +84,8 @@ const MainappWrapper = () => {
       deleteUser={deleteUser(
         id,
         setUsers,
-        toggleValue(setOpenDelete, openDelete)
+        toggleValue(setOpenDelete, openDelete),
+        users
       )}
       editUserId={openEditModal(
         users,

@@ -47,14 +47,18 @@ export const takeUserId = (fn, setter) => id => {
   fn();
 };
 
-export const deleteUser = (id, setUsers, fn) => () => {
-  deleteSingleUser(id, setUsers);
+export const deleteUser = (id, setUsers, fn, users) => () => {
+  deleteSingleUser(id, setUsers, users);
   fn();
 };
 
-const deleteSingleUser = async (id, setUsers) => {
+const deleteSingleUser = async (id, setUsers, users) => {
   const response = await deleteAnUser(id);
-  if (response.data) setUsers(response.data);
+
+  if (response.data) {
+    const notDeletedUser = users.filter(user => user._id !== id);
+    setUsers(notDeletedUser);
+  }
 };
 
 export const openEditModal = (
@@ -78,16 +82,26 @@ export const openEditModal = (
   fn();
 };
 
-export const editUserSubmit = (fn, user, id, setterUsers) => event => {
+export const editUserSubmit = (
+  fn,
+  singleUser,
+  id,
+  setterUsers,
+  users
+) => event => {
   event.preventDefault();
 
-  editSingleUser(id, user, setterUsers);
+  editSingleUser(id, singleUser, setterUsers, users);
   fn();
 };
 
-const editSingleUser = async (id, user, setterUsers) => {
-  const response = await editAnUser(id, user);
-  if (response.data) setterUsers(response.data);
+const editSingleUser = async (id, singleUser, setterUsers, users) => {
+  const response = await editAnUser(id, singleUser);
+
+  if (response.data.ok > 0) {
+    const notEditedUsers = users.filter(user => user._id !== id);
+    setterUsers([...notEditedUsers, singleUser]);
+  }
 };
 
 export const handleFilterSubmit = (data, setterUsers) => event => {

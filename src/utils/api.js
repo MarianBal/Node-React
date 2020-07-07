@@ -27,7 +27,7 @@ export const deleteUser = id => () => {
 };
 
 export const editUser = (id, data) => () => {
-  return fetch(nodeApi(`${init}${id}${endpoints.edit}`), putSettings(data));
+  return fetch(nodeApi(`${init}${endpoints.edit}${id}`), putSettings(data));
 };
 
 export const getSearch = data => () => {

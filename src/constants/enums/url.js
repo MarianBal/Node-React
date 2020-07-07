@@ -1,6 +1,6 @@
 export const endpoints = {
   init: '/',
-  edit: '/edit',
+  edit: 'edit/',
   search: 'search'
 };
 
