@@ -27,15 +27,16 @@ export const clearCanvas = (
   fn();
 };
 
-export const addUser = (user, setUsers, fn, fnTwo) => (event, id) => {
+export const addUser = (newUser, setUsers, fn, fnTwo, users) => event => {
   event.preventDefault();
-  postNewUser(user, setUsers, fn, fnTwo);
+  postNewUser(newUser, setUsers, fn, fnTwo, users);
 };
 
-const postNewUser = async (user, setUsers, fn, fnTwo) => {
-  const response = await postAddUser(user);
+const postNewUser = async (newUser, setUsers, fn, fnTwo, users) => {
+  const response = await postAddUser(newUser);
+  console.log(response.data);
   if (response.data) {
-    setUsers(response.data);
+    setUsers([...users, response.data]);
     fn();
   }
   fnTwo();

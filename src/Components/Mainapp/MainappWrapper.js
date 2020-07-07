@@ -73,7 +73,8 @@ const MainappWrapper = () => {
                 setPhone,
                 setEditUser,
                 toggleValue(setOpenModal, openModal)
-              )
+              ),
+              users
             )
       }
       openDelete={openDelete}
